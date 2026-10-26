@@ -36,6 +36,7 @@ foreach ($required in @("$app.exe", "$app.dll", 'AbraxasDB.dll', 'InhetoSerializ
 }
 Copy-Item -LiteralPath 'README.md','LICENSE','THIRD-PARTY-NOTICES.md','CHANGELOG.md' -Destination $destination
 Copy-Item -LiteralPath 'licenses' -Destination $destination -Recurse
+Copy-Item -LiteralPath 'docs' -Destination $destination -Recurse
 foreach ($metadata in Get-ChildItem -LiteralPath $cache -Filter '*.nuspec' -Recurse -File) {
     [xml]$package = Get-Content -LiteralPath $metadata.FullName -Raw
     $notices = Join-Path $destination "licenses/packages/$($package.package.metadata.id)/$($package.package.metadata.version)"
