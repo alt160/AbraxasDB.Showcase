@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+artifacts/
+.code-history/
+.vs/
+.po/
+*.user
+*.suo
+*.log

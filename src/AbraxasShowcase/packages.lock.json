@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0-windows7.0": {
+      "AbraxasDB": {
+        "type": "Direct",
+        "requested": "[1.0.1, )",
+        "resolved": "1.0.1",
+        "contentHash": "nwyi5iHCrv7YUtmbmpFn3EYz3ngxc8zMhXBEEMFMGzvhBFuLnIxfGkEaKiykL7nnN8VL7544wUzYW8Lr2MhYbA==",
+        "dependencies": {
+          "BufferStream": "1.0.2",
+          "FastMember": "1.5.0",
+          "FractalKVS": "1.0.1",
+          "Inheto": "1.1.0",
+          "LibraDex": "1.2.2",
+          "fasterflect": "3.0.0"
+        }
+      },
+      "Microsoft.Web.WebView2": {
+        "type": "Direct",
+        "requested": "[1.0.4078.44, )",
+        "resolved": "1.0.4078.44",
+        "contentHash": "TQkHa/aOHUqFHnJIJ/2ZmJ4nLcQJi0Pc0rj9BAs7SP5sT/KtVtb8jFp9uqQL6cKzCRSrwjS/wEPA43NWUOzU+A=="
+      },
+      "BufferStream": {
+        "type": "Transitive",
+        "resolved": "1.0.2",
+        "contentHash": "T8Y8X4MTjO+ITwOG0+tD1UL/mDi014yL2IjYSeZp2RLAdSLYLbrkcSonPMPBDWw2HHwG7Fc+JoBiJs+C2OFaTw=="
+      },
+      "fasterflect": {
+        "type": "Transitive",
+        "resolved": "3.0.0",
+        "contentHash": "nXucxx84mYH+fS9U92a4Ak/MfWP0H204c8D2I64zsOQynnihhavO6HOCUcpp8HfKZMn3aNn01iv1bINnxH7Kow=="
+      },
+      "FastMember": {
+        "type": "Transitive",
+        "resolved": "1.5.0",
+        "contentHash": "Db80coUbys8VgmcrR9mxUR+EInTpweoLM0GFJXIBuj8+PTgqV+ygq+EOM3HME83tob1+RR9XlBcEkpfFyypdHg=="
+      },
+      "FractalKVS": {
+        "type": "Transitive",
+        "resolved": "1.0.1",
+        "contentHash": "/Cqs41RbBiXziY23ACIZEvjNX5uhtn+/ezJMp3cd6hjOsn7vtmP19BFCskkwnszldYG73Ku2Ke6dmYsCnXEbIQ==",
+        "dependencies": {
+          "BufferStream": "1.0.2",
+          "Standart.Hash.xxHash": "4.0.5"
+        }
+      },
+      "Inheto": {
+        "type": "Transitive",
+        "resolved": "1.1.0",
+        "contentHash": "HZJazDDaxwF3yMQtnROQT+L7skodeH8K3UvbsMzh1FVL9bXjlCVNslvBSzc7Qii2mdDXVKXfQ/UFszORJNs0qQ==",
+        "dependencies": {
+          "BufferStream": "1.0.2",
+          "fasterflect": "3.0.0"
+        }
+      },
+      "LibraDex": {
+        "type": "Transitive",
+        "resolved": "1.2.2",
+        "contentHash": "7MFKlWbIIvjL1jHZdsHNIOkEbVHBgXnw5Wa2LcF9kvcxqVmfAl3f+RC8M7tNyXr8FM8JuJM39njDLQHlPYJ8FQ=="
+      },
+      "Standart.Hash.xxHash": {
+        "type": "Transitive",
+        "resolved": "4.0.5",
+        "contentHash": "2QC9zDPFT/SOnP7iFdK3AwakEcJ7D3zDoU7IwIAOyEhY4WQ2GQBvLqZ29/R1BSujPNtGHMITmVW1d+VjvLg6lg=="
+      }
+    },
+    "net10.0-windows7.0/win-x64": {
+      "Microsoft.Web.WebView2": {
+        "type": "Direct",
+        "requested": "[1.0.4078.44, )",
+        "resolved": "1.0.4078.44",
+        "contentHash": "TQkHa/aOHUqFHnJIJ/2ZmJ4nLcQJi0Pc0rj9BAs7SP5sT/KtVtb8jFp9uqQL6cKzCRSrwjS/wEPA43NWUOzU+A=="
+      }
+    }
+  }
+}

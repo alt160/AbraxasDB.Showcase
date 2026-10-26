@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Platforms>x64</Platforms>
+    <Deterministic>true</Deterministic>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <PathMap>$(MSBuildThisFileDirectory)=/_/</PathMap>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+</Project>

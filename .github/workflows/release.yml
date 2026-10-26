@@ -1,0 +1,38 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  release:
+    name: Publish portable ZIP
+    runs-on: windows-2025
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+      - name: Verify tag version
+        shell: pwsh
+        run: |
+          $project = @(Get-ChildItem src -Filter '*.csproj' -File -Recurse)
+          if ($project.Count -ne 1) { throw 'Expected one application project.' }
+          [xml]$definition = Get-Content -LiteralPath $project[0].FullName -Raw
+          if ($env:GITHUB_REF_NAME -cne ('v' + $definition.SelectSingleNode('//Version').InnerText)) { throw 'Tag and application version differ.' }
+      - name: Build and verify framework-dependent ZIP
+        shell: pwsh
+        run: ./scripts/Build-Release.ps1
+      - name: Create release with ZIP and checksum
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $directory = @(Get-ChildItem artifacts/release -Directory)
+          if ($directory.Count -ne 1) { throw 'Expected one release output.' }
+          $archive = @(Get-ChildItem -LiteralPath $directory[0].FullName -Filter '*.zip' -File)
+          if ($archive.Count -ne 1) { throw 'Expected one portable ZIP.' }
+          gh release create $env:GITHUB_REF_NAME $archive[0].FullName (Join-Path $directory[0].FullName 'SHA256SUMS.txt') --verify-tag --repo $env:GITHUB_REPOSITORY --title $env:GITHUB_REF_NAME --notes-file (Join-Path $directory[0].FullName 'RELEASE_NOTES.md')
+          if ($LASTEXITCODE -ne 0) { throw 'GitHub release creation failed.' }
